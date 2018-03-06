@@ -5,9 +5,9 @@ module.exports = function(app) {
         res.render("home");
     })
 
-    app.get("/register", function(req, res) {
-        res.render("register");
-    })
+    // app.get("/register", function(req, res) {
+    //     res.render("register");
+    // })
 
     app.get("/cms", loginAuth, function(req, res) {
         res.render("cms");
