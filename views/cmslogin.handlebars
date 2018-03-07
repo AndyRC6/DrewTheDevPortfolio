@@ -1,7 +1,6 @@
 
 <style>
     #log-in-div {
-        background-color:#e24e42;
         border:solid;
         padding:10px;
         box-shadow: 5px 5px 5px grey;
@@ -29,16 +28,16 @@
             </form>
             <br />
             <div class="alert alert-warning">
-                <p><span class="glyphicon glyphicon-info-sign"></span> This log in page is for admins only. You cannot register an account for this site.</p>
+                <p><i class="fas fa-info-circle"></i> This log in page is for admins only. You cannot register an account for this site.</p>
             </div>
             {{#if error401}}
             <div class="alert alert-danger">
-                <p><span class="glyphicon glyphicon-exclamation-sign"></span> {{error401}}</p>
+                <p><i class="fas fa-exclamation-circle"></i> {{error401}}</p>
             </div>
             {{/if}}
             {{#if error400}}
             <div class="alert alert-danger">
-                <p><span class="glyphicon glyphicon-exclamation-sign"></span> {{error400}}</p>
+                <p><i class="fas fa-exclamation-triangle"></i> {{error400}}</p>
             </div>
             {{/if}}
         </div>
