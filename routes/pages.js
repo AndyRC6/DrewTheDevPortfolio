@@ -9,6 +9,10 @@ module.exports = function(app) {
     //     res.render("register");
     // })
 
+    app.get("/skills/:category?", function(req, res){
+        res.render("skills");
+    })
+
     app.get("/cms", loginAuth, function(req, res) {
         res.render("cms");
     })
