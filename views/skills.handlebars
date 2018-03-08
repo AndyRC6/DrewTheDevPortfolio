@@ -1,84 +1,102 @@
 <style>
-    .ct-grids{
-        opacity:0.4;
+    .chart-label-name{
+        width:100px;
+        margin-left:350px;
+        margin-bottom:0px;
+        font-size:14px;
     }
-    
 </style>
 
 <br />
 <br />
 <br />
-<div class="container">
-    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <button type="button" class="btn btn-primary">Primary</button>
-    <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+<div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown"> 
+                <button type="button" class="btn btn-primary">Languages</button>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" href="/skills/frameworks">Libraries/Frameworks/Environments</a>
+                    <a class="dropdown-item" href="/skills/Other">Other</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <hr />
+
+    <div class="container chart-container">
+        <div class="ct-chart ct-golden-section mx-auto" style="height:500px; width:70%"></div>
+
     </div>
 
-    <div class="ct-chart ct-golden-section mx-auto" style="height:500px; width:50%" id="chart2"></div>
 
     <script>
 
         // HTML Label plugin
-Chartist.plugins = Chartist.plugins || {};
-Chartist.plugins.ctHtmlLabels = function(options) {
-  return function(chart) {
-    chart.on('draw', function(context) {
-      if (context.type === 'label') {
-        // Best to combine with something like sanitize-html
-        context.element.empty()._node.innerHTML = context.text;
-      }
-    });
-  }
-}
-    
+        Chartist.plugins = Chartist.plugins || {};
+        Chartist.plugins.ctHtmlLabels = function(options) {
+        return function(chart) {
+            chart.on('draw', function(context) {
+            if (context.type === 'label') {
+                // Best to combine with something like sanitize-html
+                context.element.empty()._node.innerHTML = context.text;
+            }
+            });
+        }
+        }
+            
 
-    // Initialize a Line chart in the container with the ID chart2
-    var chart = new Chartist.Bar('.ct-chart', {
-        labels: ['<i class="fab fa-js-square fa-2x" data-fa-transform="down-6"></i>', '<i class="fab fa-html5 fa-2x" data-fa-transform="down-6"></i>', '<i class="fab fa-css3 fa-2x" data-fa-transform="down-6"></i>', 'L', 'XL', 'XXL', 'XXXL'],
-        series: [20, 60, 120, 200, 180, 20, 10]
-        }, {
-        axisX: {
-        scaleMinSpace: 40,
-        offset: 80
-        },
-        distributeSeries: true,
-        horizontalBars: true,
-        plugins: [Chartist.plugins.ctHtmlLabels()]
-     });
-
-
-    chart.on('draw', function (data) {
-    if (data.type === 'bar') {
-        data.element.attr({
-            style: 'stroke-width: 0px'
+        // Initialize a Line chart in the container with the ID chart2
+        var chart = new Chartist.Bar('.ct-chart', {
+            labels: ['<p class="chart-label-name">C#</p> <i class="fab fa-microsoft fa-2x"></i>', '<p class="chart-label-name">Visual Basic</p> <i class="fab fa-microsoft fa-2x"></i>','<p class="chart-label-name">SQL</p> <i class="fas fa-database fa-2x"></i>','<p class="chart-label-name">CSS3</p> <i class="fab fa-css3 fa-2x"></i>', '<p class="chart-label-name">HTML5</p> <i class="fab fa-html5 fa-2x"></i>','<p class="chart-label-name">JavaScript</p> <i class="fab fa-js-square fa-2x"></i>'],
+            series: [40, 40, 80, 85, 100, 100]
+            }, {
+            axisX: {
+            scaleMinSpace: 100,
+            offset: 80,
+            showLabel:false,
+            showGrid:false
+            },
+            axisY: {
+                offset:50,
+            },
+            distributeSeries: true,
+            horizontalBars: true,
+            plugins: [Chartist.plugins.ctHtmlLabels()]
         });
-        var strokeWidth = 15; 
 
-        data.element.animate({
-                x2: {
-                    begin: 0,
-                    dur: 2000,
-                    from: data.x1,
-                    to: data.x2,
-                    easing: Chartist.Svg.Easing.easeOutSine,
-                },
-                'stroke-width': {
-                    begin: 0,
-                    dur: 1,
-                    from: 1,
-                    to: strokeWidth,
-                    fill: 'freeze',
-                }
-            }, false);
-    }
 
-});
+        chart.on('draw', function (data) {
+        if (data.type === 'bar') {
+            data.element.attr({
+                style: 'stroke-width: 0px'
+            });
+            var strokeWidth = 15; 
+
+            data.element.animate({
+                    x2: {
+                        begin: 0,
+                        dur: 2000,
+                        from: data.x1,
+                        to: data.x2,
+                        easing: Chartist.Svg.Easing.easeOutSine,
+                    },
+                    'stroke-width': {
+                        begin: 0,
+                        dur: 1,
+                        from: 1,
+                        to: strokeWidth,
+                        fill: 'freeze',
+                    }
+                }, false);
+        }
+    });
+
 
     </script>
 
