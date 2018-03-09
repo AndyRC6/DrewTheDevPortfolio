@@ -10,7 +10,16 @@ module.exports = function(app) {
     // })
 
     app.get("/skills/:category?", function(req, res){
-        res.render("skills");
+        switch (req.params.category){
+            case "languages": res.render("skills", {languages: true});
+            break;
+            case "frameworks": res.render("skills", {frameworks: true});
+            break;
+            case "other": res.render("skills", {other: true});
+            break;
+            default: res.render("skills", {languages: true});
+
+        }
     })
 
     app.get("/cms", loginAuth, function(req, res) {

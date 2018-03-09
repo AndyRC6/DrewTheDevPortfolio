@@ -7,21 +7,45 @@
     }
 </style>
 
+
 <br />
 <br />
 <br />
 <div class="container animated fadeIn">
     <div class="row">
         <div class="col-md-3">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown"> 
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                {{#if languages}}
                 <button type="button" class="btn btn-primary">Languages</button>
                 <div class="btn-group" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
                     <a class="dropdown-item" href="/skills/frameworks">Libraries/Frameworks/Environments</a>
-                    <a class="dropdown-item" href="/skills/Other">Other</a>
+                    <a class="dropdown-item" href="/skills/other">Other</a>
                     </div>
                 </div>
+                {{/if}} 
+                {{#if frameworks}}
+                <button type="button" class="btn btn-primary">Libraries/Frameworks/Environments</button>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" href="/skills/languages">Languages</a>
+                    <a class="dropdown-item" href="/skills/other">Other</a>
+                    </div>
+                </div>
+                {{/if}} 
+                {{#if other}}
+                <button type="button" class="btn btn-primary">Other</button>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" href="/skills/frameworks">Libraries/Frameworks/Environments</a>
+                    <a class="dropdown-item" href="/skills/languages">languages</a>
+                    </div>
+                </div>
+                {{/if}} 
+                
             </div>
 
         </div>
@@ -34,20 +58,20 @@
 
     </div>
 
-
-    <script>
+    {{#if languages}}
+        <script>
 
         // HTML Label plugin
         Chartist.plugins = Chartist.plugins || {};
         Chartist.plugins.ctHtmlLabels = function(options) {
-        return function(chart) {
-            chart.on('draw', function(context) {
-            if (context.type === 'label') {
-                // Best to combine with something like sanitize-html
-                context.element.empty()._node.innerHTML = context.text;
+            return function(chart) {
+                chart.on('draw', function(context) {
+                if (context.type === 'label') {
+                    // Best to combine with something like sanitize-html
+                    context.element.empty()._node.innerHTML = context.text;
+                }
+                });
             }
-            });
-        }
         }
             
 
@@ -99,5 +123,143 @@
 
 
     </script>
+    {{/if}}
+
+    {{#if frameworks}}
+        <script>
+
+        // HTML Label plugin
+        Chartist.plugins = Chartist.plugins || {};
+        Chartist.plugins.ctHtmlLabels = function(options) {
+            return function(chart) {
+                chart.on('draw', function(context) {
+                if (context.type === 'label') {
+                    // Best to combine with something like sanitize-html
+                    context.element.empty()._node.innerHTML = context.text;
+                }
+                });
+            }
+        }
+            
+
+        // Initialize a Line chart in the container with the ID chart2
+        var chart = new Chartist.Bar('.ct-chart', {
+            labels: ['<p class="chart-label-name">JQuery</p> <i class="fas fa-dollar-sign fa-2x"></i>', '<p class="chart-label-name">Bootstrap</p> <i class="fab fa-twitter fa-2x"></i>','<p class="chart-label-name">React.js</p> <i class="fab fa-react fa-2x"></i>', '<p class="chart-label-name">Express.js</p> <i class="fab fa-fab fa-node-js fa-2x"></i>','<p class="chart-label-name">Node.js</p> <i class="fab fa-node fa-2x"></i>'],
+            series: [90, 90, 70, 100, 100]
+            }, {
+            axisX: {
+            scaleMinSpace: 100,
+            offset: 80,
+            showLabel:false,
+            showGrid:false
+            },
+            axisY: {
+                offset:50,
+            },
+            distributeSeries: true,
+            horizontalBars: true,
+            plugins: [Chartist.plugins.ctHtmlLabels()]
+        });
+
+
+        chart.on('draw', function (data) {
+        if (data.type === 'bar') {
+            data.element.attr({
+                style: 'stroke-width: 0px'
+            });
+            var strokeWidth = 15; 
+
+            data.element.animate({
+                    x2: {
+                        begin: 0,
+                        dur: 2000,
+                        from: data.x1,
+                        to: data.x2,
+                        easing: Chartist.Svg.Easing.easeOutSine,
+                    },
+                    'stroke-width': {
+                        begin: 0,
+                        dur: 1,
+                        from: 1,
+                        to: strokeWidth,
+                        fill: 'freeze',
+                    }
+                }, false);
+        }
+    });
+
+
+    </script>
+    {{/if}}
+
+    {{#if other}}
+        <script>
+
+        // HTML Label plugin
+        Chartist.plugins = Chartist.plugins || {};
+        Chartist.plugins.ctHtmlLabels = function(options) {
+            return function(chart) {
+                chart.on('draw', function(context) {
+                if (context.type === 'label') {
+                    // Best to combine with something like sanitize-html
+                    context.element.empty()._node.innerHTML = context.text;
+                }
+                });
+            }
+        }
+            
+
+        // Initialize a Line chart in the container with the ID chart2
+        var chart = new Chartist.Bar('.ct-chart', {
+            labels: ['<p class="chart-label-name">C#</p> <i class="fab fa-microsoft fa-2x"></i>', '<p class="chart-label-name">Visual Basic</p> <i class="fab fa-microsoft fa-2x"></i>','<p class="chart-label-name">SQL</p> <i class="fas fa-database fa-2x"></i>','<p class="chart-label-name">CSS3</p> <i class="fab fa-css3 fa-2x"></i>', '<p class="chart-label-name">HTML5</p> <i class="fab fa-html5 fa-2x"></i>','<p class="chart-label-name">JavaScript</p> <i class="fab fa-js-square fa-2x"></i>'],
+            series: [40, 40, 80, 85, 100, 100]
+            }, {
+            axisX: {
+            scaleMinSpace: 100,
+            offset: 80,
+            showLabel:false,
+            showGrid:false
+            },
+            axisY: {
+                offset:50,
+            },
+            distributeSeries: true,
+            horizontalBars: true,
+            plugins: [Chartist.plugins.ctHtmlLabels()]
+        });
+
+
+        chart.on('draw', function (data) {
+        if (data.type === 'bar') {
+            data.element.attr({
+                style: 'stroke-width: 0px'
+            });
+            var strokeWidth = 15; 
+
+            data.element.animate({
+                    x2: {
+                        begin: 0,
+                        dur: 2000,
+                        from: data.x1,
+                        to: data.x2,
+                        easing: Chartist.Svg.Easing.easeOutSine,
+                    },
+                    'stroke-width': {
+                        begin: 0,
+                        dur: 1,
+                        from: 1,
+                        to: strokeWidth,
+                        fill: 'freeze',
+                    }
+                }, false);
+        }
+    });
+
+
+    </script>
+    {{/if}}
+
+    
 
 </div>
+
