@@ -13,7 +13,7 @@ module.exports = function(app) {
         switch (req.params.category){
             case "languages": res.render("skills", {languages: true});
             break;
-            case "frameworks": res.render("skills", {frameworks: true});
+            case "technologies": res.render("skills", {technologies: true});
             break;
             case "other": res.render("skills", {other: true});
             break;

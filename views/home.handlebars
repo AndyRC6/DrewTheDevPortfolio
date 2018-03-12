@@ -59,6 +59,10 @@ $(".card-container").mouseleave(function(){
     position: "static",
     bottom:"0px"
   }, "fast");
+});
+
+$("#skills-btn").on("click", function(){
+  window.location.href = "/skills";
 })
 
 })
@@ -126,7 +130,7 @@ $(".card-container").mouseleave(function(){
           <div class="card-body">
             <div class="form-row text-center">
               <div class="col-12">
-                  <button type="button" class="btn btn-secondary text-center">Take me there!</button>
+                  <button id="skills-btn" type="button" class="btn btn-secondary text-center">Take me there!</button>
               </div>
             </div>
           </div>

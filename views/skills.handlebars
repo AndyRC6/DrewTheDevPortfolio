@@ -1,9 +1,14 @@
 <style>
     .chart-label-name{
         width:100px;
-        margin-left:350px;
+        margin-left:385px;
         margin-bottom:0px;
         font-size:14px;
+    }
+    .pagelink{
+        margin-right:20px;
+        text-decoration:none;
+
     }
 </style>
 
@@ -12,53 +17,33 @@
 <br />
 <br />
 <div class="container animated fadeIn">
-    <div class="row">
-        <div class="col-md-3">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                {{#if languages}}
-                <button type="button" class="btn btn-primary">Languages</button>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item" href="/skills/frameworks">Libraries/Frameworks/Environments</a>
-                    <a class="dropdown-item" href="/skills/other">Other</a>
-                    </div>
-                </div>
-                {{/if}} 
-                {{#if frameworks}}
-                <button type="button" class="btn btn-primary">Libraries/Frameworks/Environments</button>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item" href="/skills/languages">Languages</a>
-                    <a class="dropdown-item" href="/skills/other">Other</a>
-                    </div>
-                </div>
-                {{/if}} 
-                {{#if other}}
-                <button type="button" class="btn btn-primary">Other</button>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-                    <a class="dropdown-item" href="/skills/frameworks">Libraries/Frameworks/Environments</a>
-                    <a class="dropdown-item" href="/skills/languages">languages</a>
-                    </div>
-                </div>
-                {{/if}} 
-                
-            </div>
+    <div class="row type-row">
+
+        <div class="col-md-5"></div>
+        <a class="pagelink" href="/skills/lanuages">Languages</a>
+        <a class="pagelink" href="/skills/technologies">Technologies</a>
+        <a class="pagelink" href="/skills/other">Other</a>
+        </div>
+
 
         </div>
     </div>
 
     <hr />
 
-    <div class="container chart-container">
+    
+
+    {{#if languages}}
+    <div class="container animated fadeIn">
+        <h1 class="text-center">Languages</h1>
+        <p class="text-center">Nulla eu in qui tempor voluptate magna et et et officia ex sit. Ipsum id veniam sit et consequat aute sint. Ut do occaecat aliquip occaecat ea. Commodo fugiat aute magna culpa reprehenderit dolore adipisicing esse incididunt tempor amet. Minim mollit enim in minim quis eiusmod dolore commodo in Lorem.</p>
+        <hr />
+    </div>
+
+    <div class="container chart-container animated fadeIn">
         <div class="ct-chart ct-golden-section mx-auto" style="height:500px; width:70%"></div>
 
     </div>
-
-    {{#if languages}}
         <script>
 
         // HTML Label plugin
@@ -125,7 +110,18 @@
     </script>
     {{/if}}
 
-    {{#if frameworks}}
+    {{#if technologies}}
+
+    <div class="container animated fadeIn">
+        <h1 class="text-center">Technologies</h1>
+        <p class="text-center">Qui labore irure ad pariatur cillum sit ullamco reprehenderit. Aliqua incididunt irure amet sint cillum mollit pariatur deserunt duis nulla. Nostrud commodo sit tempor laborum. Magna excepteur ea proident esse nulla excepteur pariatur nulla veniam Lorem. Consectetur irure proident tempor aute.</p>
+        <hr />
+    </div>
+
+    <div class="container chart-container animated fadeIn">
+        <div class="ct-chart ct-golden-section mx-auto" style="height:500px; width:70%"></div>
+
+    </div>
         <script>
 
         // HTML Label plugin
@@ -144,8 +140,8 @@
 
         // Initialize a Line chart in the container with the ID chart2
         var chart = new Chartist.Bar('.ct-chart', {
-            labels: ['<p class="chart-label-name">JQuery</p> <i class="fas fa-dollar-sign fa-2x"></i>', '<p class="chart-label-name">Bootstrap</p> <i class="fab fa-twitter fa-2x"></i>','<p class="chart-label-name">React.js</p> <i class="fab fa-react fa-2x"></i>', '<p class="chart-label-name">Express.js</p> <i class="fab fa-fab fa-node-js fa-2x"></i>','<p class="chart-label-name">Node.js</p> <i class="fab fa-node fa-2x"></i>'],
-            series: [90, 90, 70, 100, 100]
+            labels: ['<p class="chart-label-name">JQuery</p> <i class="fas fa-dollar-sign fa-2x" data-fa-transform="up-3"></i>', '<p class="chart-label-name">Bootstrap</p> <i class="fab fa-twitter fa-2x" data-fa-transform="up-3"></i>','<p class="chart-label-name">Sequelize</p> <i class="fas fa-database fa-2x" data-fa-transform="up-3"></i>','<p class="chart-label-name">Mongoose</p> <i class="fas fa-database fa-2x" data-fa-transform="up-3"></i>','<p class="chart-label-name">React.js</p> <i class="fab fa-react fa-2x" data-fa-transform="up-3"></i>', '<p class="chart-label-name">Express.js</p> <i class="fab fa-fab fa-node-js fa-2x" data-fa-transform="up-3"></i>','<p class="chart-label-name">Node.js</p> <i class="fab fa-node fa-2x" data-fa-transform="up-3"></i>'],
+            series: [90, 90, 80, 80, 70, 100, 100]
             }, {
             axisX: {
             scaleMinSpace: 100,
@@ -193,6 +189,17 @@
     {{/if}}
 
     {{#if other}}
+
+    <div class="container animated fadeIn">
+        <h1 class="text-center">Other</h1>
+        <p class="text-center">Eiusmod ad minim velit exercitation elit laboris culpa dolore duis ad. Est in et laboris mollit duis fugiat do officia mollit excepteur excepteur ut irure. Nisi voluptate amet reprehenderit elit consequat occaecat esse mollit ut ut reprehenderit exercitation ex. Ullamco ipsum magna aute sint reprehenderit. Velit dolor sit exercitation voluptate.</p>
+        <hr />
+    </div>
+
+    <div class="container chart-container animated fadeIn">
+        <div class="ct-chart ct-golden-section mx-auto" style="height:500px; width:70%"></div>
+
+    </div>
         <script>
 
         // HTML Label plugin
@@ -211,8 +218,8 @@
 
         // Initialize a Line chart in the container with the ID chart2
         var chart = new Chartist.Bar('.ct-chart', {
-            labels: ['<p class="chart-label-name">C#</p> <i class="fab fa-microsoft fa-2x"></i>', '<p class="chart-label-name">Visual Basic</p> <i class="fab fa-microsoft fa-2x"></i>','<p class="chart-label-name">SQL</p> <i class="fas fa-database fa-2x"></i>','<p class="chart-label-name">CSS3</p> <i class="fab fa-css3 fa-2x"></i>', '<p class="chart-label-name">HTML5</p> <i class="fab fa-html5 fa-2x"></i>','<p class="chart-label-name">JavaScript</p> <i class="fab fa-js-square fa-2x"></i>'],
-            series: [40, 40, 80, 85, 100, 100]
+            labels: ['<p class="chart-label-name">Git</p> <i class="fab fa-git-square fa-2x" data-fa-transform="down-7"></i>', '<p class="chart-label-name">npm</p> <i class="fab fa-npm fa-2x" data-fa-transform="down-7"></i>','<p class="chart-label-name">Bash</p> <i class="fas fa-terminal fa-2x" data-fa-transform="down-7"></i>','<p class="chart-label-name">API</p> <i class="fas fa-plug fa-2x" data-fa-transform="down-7"></i>'],
+            series: [100, 100, 100, 100]
             }, {
             axisX: {
             scaleMinSpace: 100,
