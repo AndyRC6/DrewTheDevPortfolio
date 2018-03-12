@@ -1,5 +1,17 @@
 
 <style>
+  .parallax{
+    background-image: url('assets/images/pexels-photo-389818.jpeg');
+    /* Set a specific height */
+    min-height: 500px;
+    position:sticky;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .jumbotron {
     color:white;
     height:500px;
@@ -65,6 +77,10 @@ $("#skills-btn").on("click", function(){
   window.location.href = "/skills";
 })
 
+$("#contact-btn").on("click", function(){
+  window.location.href = "/contact";
+})
+
 })
 </script>
 
@@ -87,8 +103,8 @@ $("#skills-btn").on("click", function(){
 
 </div>
 {{!-- End JumboTron --}}
-
 <div class="container">
+  
   <div class="row">
     <div class="col-md-3 card-container">
       {{!-- Begin Card --}}
@@ -156,7 +172,7 @@ $("#skills-btn").on("click", function(){
           <div class="card-body">
             <div class="form-row text-center">
               <div class="col-12">
-                  <button type="button" class="btn btn-secondary text-center">Take me there!</button>
+                  <button id="contact-btn" type="button" class="btn btn-secondary text-center">Take me there!</button>
               </div>
             </div>
           </div>
@@ -195,3 +211,5 @@ $("#skills-btn").on("click", function(){
     </div>
   </div>
 </div>
+
+<div class="parallax"></div>

@@ -1,5 +1,7 @@
 var usercontroller = require("./usercontroller");
+var mailcontroller = require("./mailcontroller");
 
 module.exports = {
-    usercontroller: usercontroller
+    usercontroller: usercontroller,
+    mailcontroller: mailcontroller
 }

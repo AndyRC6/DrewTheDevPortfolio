@@ -5,6 +5,10 @@ module.exports = function(app) {
         res.render("home");
     })
 
+    app.get("/contact", function(req, res){
+        res.render("contact");
+    })
+
     // app.get("/register", function(req, res) {
     //     res.render("register");
     // })
@@ -22,7 +26,7 @@ module.exports = function(app) {
         }
     })
 
-    app.get("/cms", loginAuth, function(req, res) {
+    app.get("/cms/:category?", loginAuth, function(req, res) {
         res.render("cms");
     })
 }

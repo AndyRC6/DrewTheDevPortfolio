@@ -1,7 +1,8 @@
 var controller = require("../controllers/index");
+var loginAuth = require("../middleware/loginauth");
 
 module.exports = function(app) {
-    app.post("/register", function(req, res) {
+    app.post("/register", loginAuth, function(req, res) {
         controller.usercontroller.createNewUser(req, res);
     })
     
@@ -12,4 +13,8 @@ module.exports = function(app) {
     app.get('/logout', function (req, res, next) {
         controller.usercontroller.userlogout(req, res);
       });
+
+    app.post("/sendmail", function(req, res){
+        controller.mailcontroller.sendMail(req, res);
+    })
 }

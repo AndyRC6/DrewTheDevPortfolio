@@ -17,6 +17,10 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.7",
+    "nodemailer": "^4.6.2",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1"
   }
 }

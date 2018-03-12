@@ -1,0 +1,73 @@
+<style>
+    .card{
+        box-shadow: 5px 5px 5px grey;
+        margin-top:15%;
+    }
+    b{
+        font-weight:bolder !important;
+    }
+</style>
+
+
+<br />
+<br />
+<br />
+
+<div class="container animated fadeIn">
+    <div class="row">
+        <div class="col-md-8">
+            <form class="mx-auto" action="/sendmail" method="POST" role="form">
+                <legend>Contact Me</legend>
+                <hr />
+                <div class="form-group">
+                    <label for="">First Name</label>
+                    <input type="text" class="form-control" name="firstName" placeholder="John">
+                
+                    <label for="">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" placeholder="Doe">
+                
+                    <label for="">Email Address</label>
+                    <input type="email" class="form-control" name="email" placeholder="Example@gmail.com">
+
+                    <label for="">Subject</label>
+                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+
+                    <label for="">Message</label>
+                    <textarea class="form-control" name="message" rows="10"></textarea>
+                </div>
+
+                
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br />
+            {{#if success}}
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong> Your message was sent - thanks for contacting me!
+                </div>
+            {{/if}}
+            {{#if error}}
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Uh oh!</strong> It looks like there was an issue sending your message. Please try again later or send an email directly to andrew@drewthedev.com
+                </div>
+            {{/if}}
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3" >
+                <div class="card-body">
+                    <h4 class="card-title">Contact Information</h4>
+                    <h6><b>Email:</b> andrew@drewthedev.com</h6>
+                    <h6><b>Phone:</b> Provided upon request</h6>
+                    <hr />
+                    <p>If you'd like to contact me, the best way is to shoot me an email. You can send me one directly using my email address, or you can fill out the form on this page to send me a message. Just make sure you put in all of your contact information so I can get back with you.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
