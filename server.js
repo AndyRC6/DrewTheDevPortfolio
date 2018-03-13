@@ -20,7 +20,8 @@ app.use(session({
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
-        url: process.env.MONGODB_URI || "mongodb://localhost/portfolio"
+        url: process.env.MONGODB_URI || "mongodb://localhost/portfolio",
+        ttl: 3600
     }),
     httpOnly: true,
     secure: false,

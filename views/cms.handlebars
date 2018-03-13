@@ -1,6 +1,7 @@
 <style>
     .pagelink{
-        margin-right:20px;
+        margin-right:10px;
+        margin-left:20px;
         text-decoration:none;
 
     }
@@ -11,20 +12,94 @@
 <br />
 
 
-<div class="container animated fadeIn">
-    <div class="row type-row">
-
-        <div class="col-md-5"></div>
         <a class="pagelink" href="/cms/projects">projects</a>
         <a class="pagelink" href="/cms/users">users</a>
-        </div>
-
-
-        </div>
-    </div>
+        <a class="pagelink" href="/logout">Logout</a>
 
     <hr />
 
-<div class="container">
+<div class="container animated fadeIn">
+    <div class="col-md-6 mx-auto">
+        {{#if users}}
+            <form action="/register" method="POST" role="form">
+            <legend>Create Admin User</legend>
+        
+            <div class="form-group">
+                <label for="">firstName</label>
+                <input type="text" class="form-control" name="first_name">
 
+                <label for="">lastName</label>
+                <input type="text" class="form-control" name="last_name">
+
+                <label for="">UserName</label>
+                <input type="text" class="form-control" name="username">
+
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {{/if}}
+        {{#if projects}}
+            <form action="/project" method="POST" role="form">
+            <legend>Add New Project</legend>
+        
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" name="name">
+
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="description">
+
+                <label for="">Url</label>
+                <input type="text" class="form-control" name="url">
+
+                <label for="">Github url</label>
+                <input type="text" class="form-control" name="github_url">
+
+                <label for="">Technologies</label>
+                <input type="text" class="form-control" name="technologies">
+
+                <label for="">Image</label>
+                <input type="text" class="form-control" name="image">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {{/if}}
+        <br />
+
+        {{#if project}}
+            <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-header">Created Object</div>
+                <div class="card-body">
+                    <p class="card-text">{{project}}</p>
+                </div>
+            </div>
+        {{/if}}
+        {{#if user}}
+            <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong>
+            </div>
+            <div class="card border-primary mb-3">
+                <div class="card-header">Created User Object</div>
+                <div class="card-body">
+                    <p class="card-text">{{user}}</p>
+                </div>
+            </div>
+        {{/if}}
+        {{#if error}}
+            <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Something went wrong!</strong>
+                </div>
+        {{/if}}
+
+    </div>
 </div>

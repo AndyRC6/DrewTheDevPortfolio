@@ -27,6 +27,13 @@ module.exports = function(app) {
     })
 
     app.get("/cms/:category?", loginAuth, function(req, res) {
-        res.render("cms");
+        switch (req.params.category){
+            case "users": res.render("cms", {users: true});
+            break;
+            case "projects": res.render("cms", {projects: true});
+            break;
+            default: res.render("cms", {projects: true});
+
+        }
     })
 }

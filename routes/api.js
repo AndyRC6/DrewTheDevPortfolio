@@ -10,11 +10,15 @@ module.exports = function(app) {
         controller.usercontroller.userlogin(req, res);
     })
 
-    app.get('/logout', function (req, res, next) {
+    app.get('/logout', loginAuth, function (req, res, next) {
         controller.usercontroller.userlogout(req, res);
       });
 
     app.post("/sendmail", function(req, res){
         controller.mailcontroller.sendMail(req, res);
+    })
+
+    app.post("/project", function(req, res){
+        controller.projectcontroller.addProject(req, res);
     })
 }

@@ -5,10 +5,10 @@ module.exports = {
         if(req.body != null){
             db.user.create(req.body)
             .then(function(dbUser) {
-                res.json(dbUser);
+              res.render("cms", {users: true, user: dbUser});
             })
             .catch(function(err){
-                console.log(err)
+              res.render("cms", {users: true, error: true});
             })
         }
     },

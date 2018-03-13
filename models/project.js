@@ -15,6 +15,14 @@ var ProjectSchema = new Schema({
         type: String,
         trim:true
     },
+    github_url: {
+        type: String,
+        trim:true
+    },
+    technologies: {
+        type: String,
+        trim:true
+    },
     image: {
         type: String
     }
