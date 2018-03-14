@@ -1,4 +1,5 @@
 var loginAuth = require("../middleware/loginauth");
+var controller = require("../controllers/index");
 
 module.exports = function(app) {
     app.get("/", function(req, res){
@@ -7,6 +8,10 @@ module.exports = function(app) {
 
     app.get("/contact", function(req, res){
         res.render("contact");
+    })
+
+    app.get("/projects", function(req, res){
+        controller.projectcontroller.loadProjectPage(req, res);
     })
 
     // app.get("/register", function(req, res) {

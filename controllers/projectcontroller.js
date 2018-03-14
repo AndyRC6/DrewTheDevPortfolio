@@ -12,5 +12,13 @@ module.exports = {
                 res.render("cms", {projects: true, error: true});
             })
         }
+    },
+    loadProjectPage: function(req, res) {
+        db.project.find({})
+        .then(function(dbProjects){
+            res.render("projects", {dbProjects})
+        }).catch(function(err){
+            console.log(err);
+        })
     }
 }
