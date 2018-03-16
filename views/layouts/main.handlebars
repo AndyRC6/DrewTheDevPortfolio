@@ -38,53 +38,57 @@
             body{
                 background-color:#F5F5F5;
             }
+            .nav-icon{
+                margin-right:15px;
+                color:#F5F5F5;
+            }
+            .footer{
+                position:fixed;
+                width:100%;
+                bottom:0;
+                background-color:#212529;
+                color:white;
+                height:55px;
+            }
+            .footer p {
+                margin-top: 15px;
+            }
     </style>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="/"><h3>Andrew Reyes</h3></a>
-        <!-- Nav tabs -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Andrew Reyes-Cairo</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-        <ul class="nav nav-tabs|pills offset-7" id="navId">
-        
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-            <a class="dropdown-item" href="#tab2Id">Action</a>
-            <a class="dropdown-item" href="#tab3Id">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#tab4Id">Action</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="#tab1Id" class="nav-link active">Active</a>
-        </li>
-        
-        <li class="nav-item">
-            <a href="#tab5Id" class="nav-link">Another link</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link disabled">Disabled</a>
-        </li>
-        </ul>
-
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
-        <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+        <div class="navbar-collapse collapse" id="navbarColor01" style="">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="/about">About Me</a>
+                <a class="dropdown-item" href="/skills">My Skills</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/contact">Contact Me</a>
+                <a class="dropdown-item" href="/projects">Projects</a>
+                </div>
+            </li>
+            </ul>
+            <a href="https://github.com/AndyRC6" target="_blank"><i class="nav-icon fab fa-github-square fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/andrew-reyes-cairo/" target="_blank"><i class="nav-icon fab fa-linkedin fa-2x"></i></a>
+            <a href="https://stackoverflow.com/users/4234150/andyrc" target="_blank"><i class="nav-icon fab fa-stack-overflow fa-2x"></i></a>
         </div>
+    </nav>
 
-        <script>
-        $('#navId a').click(e => {
-            e.preventDefault();
-            $(this).tab('show');
-        });
-        </script>
-        
-        </nav>
+
     {{{body}}}
+
+    
+        <div class=" footer">
+            <p class="text-center">© Copyright 2017 Andrew Reyes-Cairo</p>
+        </div>
 </body>
 </html>

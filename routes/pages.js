@@ -14,9 +14,9 @@ module.exports = function(app) {
         controller.projectcontroller.loadProjectPage(req, res);
     })
 
-    // app.get("/register", function(req, res) {
-    //     res.render("register");
-    // })
+    app.get("/about", function(req, res){
+        res.render("about");
+    })
 
     app.get("/skills/:category?", function(req, res){
         switch (req.params.category){

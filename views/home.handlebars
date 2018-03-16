@@ -50,6 +50,12 @@
   .jumbo-container{
     margin-top:35px;
   }
+  @media only screen and (max-width: 800px) {
+    .arrow-down{
+      border-color:#F5F5F5;
+      margin-bottom:100px;
+    }
+}
 </style>
 
 <script>
@@ -80,6 +86,16 @@ $("#skills-btn").on("click", function(){
 $("#contact-btn").on("click", function(){
   window.location.href = "/contact";
 })
+
+$("#projects-btn").on("click", function(){
+  window.location.href = "/projects";
+})
+
+$("#about-btn").on("click", function(){
+  window.location.href = "/about";
+})
+
+
 
 })
 </script>
@@ -121,7 +137,7 @@ $("#contact-btn").on("click", function(){
           <div class="card-body">
             <div class="form-row text-center">
               <div class="col-12">
-                  <button type="button" class="btn btn-secondary text-center">Take me there!</button>
+                  <button id="about-btn" type="button" class="btn btn-secondary text-center">Take me there!</button>
               </div>
             </div>
           </div>
@@ -198,7 +214,7 @@ $("#contact-btn").on("click", function(){
           <div class="card-body">
             <div class="form-row text-center">
               <div class="col-12">
-                  <button type="button" class="btn btn-secondary text-center">Take me there!</button>
+                  <button id="projects-btn" type="button" class="btn btn-secondary text-center">Take me there!</button>
               </div>
             </div>
           </div>

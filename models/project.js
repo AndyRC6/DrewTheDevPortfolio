@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+var moment = require('moment');
 
 var Schema = mongoose.Schema;
 
@@ -25,9 +26,14 @@ var ProjectSchema = new Schema({
     },
     image: {
         type: String
+    },
+    date: {
+        type: String,
+        default: moment().format('MMMM Do YYYY')
     }
 
 });
+
 
 var Project = mongoose.model('Project', ProjectSchema);
 module.exports = Project;
