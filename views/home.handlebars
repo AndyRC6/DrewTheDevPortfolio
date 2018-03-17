@@ -50,6 +50,12 @@
   .jumbo-container{
     margin-top:35px;
   }
+  .card-link{
+    text-decoration: none;
+  }
+  .card-link:hover{
+    text-decoration: none;
+  }
   @media only screen and (max-width: 800px) {
     .arrow-down{
       border-color:#F5F5F5;
@@ -124,10 +130,11 @@ $("#about-btn").on("click", function(){
   <div class="row">
     <div class="col-md-3 card-container">
       {{!-- Begin Card --}}
+      <a class="card-link" href="/about">
       <div class="card mb-3 animated fadeIn">
           <h3 class="card-header"><b>About Me</b></h3>
           <div class="card-body">
-            <h5 class="card-title">Get to Know Me</h5>
+            {{!-- <h5 class="card-title">Get to Know Me</h5> --}}
             <h6 class="card-subtitle text-muted">Click the button below to check out my bio</h6>
           </div>
           <img class="mx-auto" style="height: 200px; width: 100%; display: block;" src="assets/images/me.jpg" alt="Card image">
@@ -145,19 +152,21 @@ $("#about-btn").on("click", function(){
             3/7/2018
           </div>
       </div>
+      </a>
       {{!-- End Card --}}
     </div>
     <div class="col-md-3 card-container">
       {{!-- Begin Card --}}
+      <a class="card-link" href="/skills">
       <div class="card mb-3 animated fadeIn">
           <h3 class="card-header"><b>My Skills</b></h3>
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            {{!-- <h5 class="card-title"></h5> --}}
+            <h6 class="card-subtitle text-muted">Check out everything I can do here!</h6>
           </div>
           <img style="height: 200px; width: 100%; display: block;" src="assets/images/pexels-photo-574073.jpg" alt="Card image">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">This page showcases all the different languages, technologies, and other skills I am proficient in.</p>
           </div>
           <div class="card-body">
             <div class="form-row text-center">
@@ -170,20 +179,22 @@ $("#about-btn").on("click", function(){
             2 days ago
           </div>
       </div>
+      </a>
       {{!-- End Card --}}
       
     </div>
     <div class="col-md-3 card-container">
       {{!-- Begin Card --}}
+      <a class="card-link" href="/contact">
       <div class="card mb-3 animated fadeIn">
           <h3 class="card-header"><b>Contact Me</b></h3>
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            {{!-- <h5 class="card-title">Special title treatment</h5> --}}
+            <h6 class="card-subtitle text-muted">Shoot me a message!</h6>
           </div>
           <img style="height: 200px; width: 100%; display: block;" src="assets/images/pexels-photo-699122.jpg" alt="Card image">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">Want to collaborate? Have a project that needs a full stack developer? This page has all you need to get a hold of me.</p>
           </div>
           <div class="card-body">
             <div class="form-row text-center">
@@ -196,20 +207,22 @@ $("#about-btn").on("click", function(){
             2 days ago
           </div>
       </div>
+      </a>
       {{!-- End Card --}}
       
     </div>
     <div class="col-md-3 card-container">
       {{!-- Begin Card --}}
+      <a class="card-link" href="/projects">
       <div class="card mb-3 animated fadeIn">
           <h3 class="card-header"><b>My Projects</b></h3>
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            {{!-- <h5 class="card-title">Special title treatment</h5> --}}
+            <h6 class="card-subtitle text-muted">Check out my work!</h6>
           </div>
           <img style="height: 200px; width: 100%; display: block;" src="assets/images/pexels-photo-247772.jpg" alt="Card image">
           <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <p class="card-text">If you're interested in seeing exactly what I can do, check out some of my past projects here.</p>
           </div>
           <div class="card-body">
             <div class="form-row text-center">
@@ -222,6 +235,7 @@ $("#about-btn").on("click", function(){
             2 days ago
           </div>
       </div>
+      </a>
       {{!-- End Card --}}
       
     </div>
